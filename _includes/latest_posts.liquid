@@ -8,6 +8,9 @@
   .latest-posts .lp-date-inline {
     display: none;
   }
+  .latest-posts .lp-ext {
+    vertical-align: -0.15em;
+  }
   .latest-posts .lp-desc {
     margin: 0.2rem 0 0;
     font-size: 0.92em;
@@ -76,7 +79,7 @@
               <span class="lp-date-inline">{{ item.date | date: '%b %d, %Y' }}</span>
               <a class="news-title" href="{{ href }}" {% if external %} target="_blank" rel="noopener" {% endif %}>{{ item.title }}</a>
               {% if external %}
-                <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <svg class="lp-ext" width="1.1em" height="1.1em" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path
                     d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9"
                     class="icon_svg-stroke"

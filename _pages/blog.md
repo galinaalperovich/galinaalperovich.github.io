@@ -184,7 +184,7 @@ pagination:
 </div>
 
   <div class="col-sm-3">
-    <img class="card-img" src="{{ post.thumbnail | relative_url }}" style="object-fit: cover; height: 90%; border-radius: 6px" alt="{{ post.title | escape }}" loading="lazy">
+    <img class="card-img" src="{{ post.thumbnail | relative_url }}" style="width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 6px" alt="{{ post.title | escape }}" loading="lazy">
   </div>
 </div>
 {% endif %}
