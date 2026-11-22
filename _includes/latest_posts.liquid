@@ -1,0 +1,112 @@
+{%- comment -%}
+  Local override of al_folio_core's _includes/latest_posts.liquid (al-folio v1.x).
+  Adds to each row on the home page: a picture when the post sets `thumbnail:`,
+  and the post's `description:` under its title. Everything else matches the original.
+  After theme updates, compare with the original: bundle exec al-folio upgrade overrides diff _includes/latest_posts.liquid
+{%- endcomment -%}
+<style>
+  .latest-posts .lp-date-inline {
+    display: none;
+  }
+  .latest-posts .lp-desc {
+    margin: 0.2rem 0 0;
+    font-size: 0.92em;
+    opacity: 0.8;
+  }
+  .latest-posts .lp-thumb {
+    width: 140px;
+    padding-left: 0.75rem;
+    vertical-align: top;
+  }
+  .latest-posts .lp-thumb img {
+    display: block;
+    width: 128px;
+    height: 84px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--global-divider-color, rgba(0, 0, 0, 0.1));
+  }
+  @media (max-width: 576px) {
+    .latest-posts .lp-date {
+      display: none;
+    }
+    .latest-posts .lp-date-inline {
+      display: block;
+      font-size: 0.85em;
+      opacity: 0.7;
+    }
+    .latest-posts .lp-thumb {
+      width: 92px;
+    }
+    .latest-posts .lp-thumb img {
+      width: 84px;
+      height: 58px;
+    }
+  }
+</style>
+<div class="news latest-posts">
+  {% if page.latest_posts != blank %}
+    {% assign latest_posts_size = site.posts | size %}
+    <div
+      class="table-responsive"
+      {% if page.latest_posts.scrollable and latest_posts_size > 3 %}
+        style="max-height: 60vw"
+      {% endif %}
+    >
+      <table class="table table-sm table-borderless">
+        {% assign latest_posts = site.posts %}
+        {% if page.latest_posts.limit %}
+          {% assign latest_posts_limit = page.latest_posts.limit %}
+        {% else %}
+          {% assign latest_posts_limit = latest_posts_size %}
+        {% endif %}
+        {% for item in latest_posts limit: latest_posts_limit %}
+          {% assign external = false %}
+          {% if item.redirect == blank %}
+            {% assign href = item.url | relative_url %}
+          {% elsif item.redirect contains '://' %}
+            {% assign href = item.redirect %}
+            {% assign external = true %}
+          {% else %}
+            {% assign href = item.redirect | relative_url %}
+          {% endif %}
+          <tr>
+            <th scope="row" class="lp-date" style="width: 20%">{{ item.date | date: '%b %d, %Y' }}</th>
+            <td>
+              <span class="lp-date-inline">{{ item.date | date: '%b %d, %Y' }}</span>
+              <a class="news-title" href="{{ href }}" {% if external %} target="_blank" rel="noopener" {% endif %}>{{ item.title }}</a>
+              {% if external %}
+                <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9"
+                    class="icon_svg-stroke"
+                    stroke="#999"
+                    stroke-width="1.5"
+                    fill="none"
+                    fill-rule="evenodd"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              {% endif %}
+              {% if item.description %}
+                <p class="lp-desc">{{ item.description }}</p>
+              {% endif %}
+            </td>
+            {% if item.thumbnail %}
+              <td class="lp-thumb">
+                <a href="{{ href }}" {% if external %} target="_blank" rel="noopener" {% endif %} aria-hidden="true" tabindex="-1">
+                  <img src="{{ item.thumbnail | relative_url }}" alt="" loading="lazy">
+                </a>
+              </td>
+            {% else %}
+              <td class="lp-thumb"></td>
+            {% endif %}
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+  {% else %}
+    <p>No posts so far...</p>
+  {% endif %}
+</div>

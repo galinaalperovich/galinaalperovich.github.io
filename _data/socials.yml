@@ -1,0 +1,5 @@
+# Social links shown on the about page, in this order.
+# Key names come from the jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
+github_username: galinaalperovich
+medium_username: galperovich
+rss_icon: true
