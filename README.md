@@ -21,6 +21,10 @@ read_time: 15                                 # optional: minutes, overrides the
 ---
 ```
 
+## Comments
+
+Posts hosted on this site get a [giscus](https://giscus.app) comment box (set in `_config.yml`, on for all posts). Comments are stored in this repo's GitHub Discussions, category "Announcements". The giscus GitHub app must be installed on this repo: https://github.com/apps/giscus
+
 ## Changes to the al-folio starter
 
 - `_includes/latest_posts.liquid` overrides the theme's version: the home page's "latest posts" list shows each post's `thumbnail` and `description`.
