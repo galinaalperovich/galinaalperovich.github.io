@@ -5,7 +5,7 @@ date: 2023-05-15
 description: ALiBi, sparse attention, FlashAttention, multi-query attention, conditional computation and the other tricks that make long context windows possible.
 tags: [llm, transformers]
 categories: [explainers]
-thumbnail: assets/img/posts/secret-sauce-100k.png
+thumbnail: assets/img/posts/secret-sauce-100k.jpg
 redirect: https://blog.gopenai.com/how-to-speed-up-llms-and-use-100k-context-window-all-tricks-in-one-place-ffd40577b4c
 read_time: 16
 ---
