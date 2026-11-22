@@ -6,8 +6,8 @@ description: I installed up to 1,000 skills and 791 MCP tools in Claude Code and
 tags: [ai-agents, claude-code, codex, mcp]
 categories: [research]
 thumbnail: assets/img/posts/closet-full-of-skills.png
-redirect: https://galinaalperovich.github.io/in-context-forgetting/
+redirect: https://galinaalperovich.github.io/closet-full-of-skills/
 read_time: 15
 ---
 
-The full post, with the data and code, is at [galinaalperovich.github.io/in-context-forgetting](https://galinaalperovich.github.io/in-context-forgetting/).
+The full post, with the data and code, is at [galinaalperovich.github.io/closet-full-of-skills](https://galinaalperovich.github.io/closet-full-of-skills/).

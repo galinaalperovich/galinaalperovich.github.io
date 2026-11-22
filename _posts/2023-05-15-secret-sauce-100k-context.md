@@ -2,7 +2,7 @@
 layout: post
 title: "The Secret Sauce behind 100K context window in LLMs: all tricks in one place"
 date: 2023-05-15
-description: ALiBi, sparse attention, FlashAttention, multi-query attention, conditional computation and the other tricks that make long context windows possible.
+description: "#1 on Hacker News. ALiBi, sparse attention, FlashAttention, multi-query attention, conditional computation and the other tricks that make long context windows possible."
 tags: [llm, transformers]
 categories: [explainers]
 thumbnail: assets/img/posts/secret-sauce-100k.jpg
