@@ -6,7 +6,7 @@ subtitle: AI from promising pilot to audit-ready production
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: galina-prague.jpg
   image_circular: false
 
 selected_papers: false
